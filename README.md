@@ -1,3 +1,3 @@
-##This is an app for a circuit workout!
+## This is a simple React app for a circuit workout.
 
-##SUPER WIP ATM, DONT JUDGE ME
+# SUPER WIP ATM
