@@ -8,7 +8,7 @@ class Timer extends Component {
     super(props);
 
     this.state = {
-      timeLeft: 1149,
+      timeLeft: 1200,
       minutes: 0,
       seconds: 0
     };
