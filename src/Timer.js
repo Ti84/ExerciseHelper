@@ -8,11 +8,16 @@ class Timer extends Component {
     super(props);
 
     this.state = {
-      timeLeft: 1200,
+      timeLeft: 0,
       minutes: 0,
       seconds: 0
     };
   }
+
+  componentWillReceiveProps() {
+    
+  }
+
   setTime = (seconds) => {
     this.setState({
       ...this.state,
@@ -34,12 +39,16 @@ class Timer extends Component {
       this.setTime(secondsLeft);
     }, 1000);
   }
+
   formatSeconds = (remainingSeconds) => remainingSeconds.toString().length < 2 ? `0${remainingSeconds}` : remainingSeconds;
 
-
   componentDidMount() {
-    this.timer(this.state.timeLeft);
+    this.setState({
+      ...this.state,
+      timeLeft: this.props.timerTime
+    }, () => this.timer(this.state.timeLeft));
   }
+
   render() {
     return (<div className="Timer">
       <p>{`${this.state.minutes}:${this.formatSeconds(this.state.seconds)}`}</p>
