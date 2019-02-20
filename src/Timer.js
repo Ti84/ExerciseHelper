@@ -1,9 +1,8 @@
 // This page is based on: https://www.youtube.com/watch?v=LAaf7-WuJJQ Wes Bos is amazing!
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Timer extends Component {
-  
   constructor(props) {
     super(props);
 
@@ -14,22 +13,19 @@ class Timer extends Component {
     };
   }
 
-  componentWillReceiveProps() {
-    
-  }
-
-  setTime = (seconds) => {
+  setTime = seconds => {
     this.setState({
       ...this.state,
       minutes: Math.floor(seconds / 60),
       seconds: Math.floor(seconds % 60)
-    })
+    });
   };
-  timer = (seconds) => {
+
+  timer = seconds => {
     const now = Date.now();
     const then = now + seconds * 1000;
     this.setTime(seconds);
-    
+
     const countDown = setInterval(() => {
       const secondsLeft = Math.round((then - Date.now()) / 1000);
       if (secondsLeft <= 0) {
@@ -38,21 +34,31 @@ class Timer extends Component {
       }
       this.setTime(secondsLeft);
     }, 1000);
-  }
+  };
 
-  formatSeconds = (remainingSeconds) => remainingSeconds.toString().length < 2 ? `0${remainingSeconds}` : remainingSeconds;
+  formatSeconds = remainingSeconds =>
+    remainingSeconds.toString().length < 2
+      ? `0${remainingSeconds}`
+      : remainingSeconds;
 
   componentDidMount() {
-    this.setState({
-      ...this.state,
-      timeLeft: this.props.timerTime
-    }, () => this.timer(this.state.timeLeft));
+    this.setState(
+      {
+        ...this.state,
+        timeLeft: this.props.timerTime
+      },
+      () => this.timer(this.state.timeLeft)
+    );
   }
 
   render() {
-    return (<div className="Timer">
-      <p>{`${this.state.minutes}:${this.formatSeconds(this.state.seconds)}`}</p>
-    </div>);  
+    return (
+      <div className="Timer">
+        <p>{`${this.state.minutes}:${this.formatSeconds(
+          this.state.seconds
+        )}`}</p>
+      </div>
+    );
   }
 }
 
