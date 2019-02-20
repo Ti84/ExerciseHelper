@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Router } from "@reach/router";
-import './App.css';
-import TimerPage from './Timer-Page';
+import "./App.scss";
+import TimerPage from "./Timer-Page";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <Router>
+        <Router>
           <TimerPage path="/" />
-      </Router>
+        </Router>
       </div>
     );
   }

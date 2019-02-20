@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+  height: 100%;
+
+  .btn-control {
+    color: white;
+    border: .5px gray solid;
+    cursor: pointer;
+    padding: 15px 20px;
+    background-color: hotpink;
+    font-family: 'Baloo Chettan', cursive;
+  }
+
+  .timer-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    .timer {
+      .timer-background {
+        background: rgb(33, 25, 49);
+        border-radius: 20px;
+        text-align: center;
+        height: auto;
+        width: auto;
+        display: inline-block;
+        padding: 15px 20px;
+
+        .time {
+          color: white;
+          font-size: 10em;
+        }
+      }
+    }
+
+    .btn-control-nav {
+      margin-top: 3%;
+
+      .time-controls {
+        .btn-control {
+          margin: 0 5px;
+          border-radius: 50%;
+          font-size: 1.5em;
+          width: 75px;
+          height: 75px;
+        }
+      }
+
+      .function-controls {
+        margin-top: 5%;
+
+        .btn-control {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}

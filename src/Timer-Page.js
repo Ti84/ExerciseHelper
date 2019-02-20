@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Timer from "./Timer";
-import Button from "./Button";
+import ButtonControl from "./ButtonControl";
 
 class TimerPage extends Component {
   constructor(props) {
@@ -73,14 +73,20 @@ class TimerPage extends Component {
     return (
       <div className="timer-page">
         <Timer seconds={this.state.timeLeft} />
-        <Button onClick={() => this.setTimeLeft(300)} label={5} />
-        <Button onClick={() => this.setTimeLeft(600)} label={10} />
-        <Button onClick={() => this.setTimeLeft(900)} label={15} />
-        <Button onClick={() => this.setTimeLeft(1200)} label={20} />
-        <Button
-          onClick={this.playButtonClick}
-          label={this.state.timerControlText}
-        />
+        <div className="btn-control-nav">
+          <div className="time-controls">
+            <ButtonControl onClick={() => this.setTimeLeft(300)} label={5} />
+            <ButtonControl onClick={() => this.setTimeLeft(600)} label={10} />
+            <ButtonControl onClick={() => this.setTimeLeft(900)} label={15} />
+            <ButtonControl onClick={() => this.setTimeLeft(1200)} label={20} />
+          </div>
+          <div className="function-controls">
+            <ButtonControl
+              onClick={this.playButtonClick}
+              label={this.state.timerControlText}
+            />
+          </div>
+        </div>
       </div>
     );
   }

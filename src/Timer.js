@@ -13,8 +13,10 @@ class Timer extends Component {
 
   render() {
     return (
-      <div className="Timer">
-        <p>{this.formatSeconds(this.props.seconds)}</p>
+      <div className="timer">
+        <div className="timer-background">
+          <span className="time">{this.formatSeconds(this.props.seconds)}</span>
+        </div>
       </div>
     );
   }

@@ -2,18 +2,21 @@
 
 import React, { Component } from "react";
 
-class Button extends Component {
+class ButtonControl extends Component {
   onClick = () => {
     this.props.onClick();
   };
 
   render() {
     return (
-      <button type="button" onClick={() => this.onClick()}>
-        {this.props.label}
-      </button>
+      <input
+        className="btn-control"
+        type="button"
+        onClick={() => this.onClick()}
+        value={this.props.label}
+      />
     );
   }
 }
 
-export default Button;
+export default ButtonControl;
