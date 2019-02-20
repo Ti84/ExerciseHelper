@@ -12,6 +12,10 @@ class TimerPage extends Component {
     };
   }
 
+  componentDidMount() {
+    this.timer(this.state.timeLeft);
+  }
+
   playButtonClick = () => {
     this.setState({
       ...this.state,
@@ -21,13 +25,32 @@ class TimerPage extends Component {
     });
   };
 
+  setTime = seconds => {
+    this.setState({
+      ...this.state,
+      timeLeft: seconds
+    });
+  };
+
+  timer = seconds => {
+    const now = Date.now();
+    const then = now + seconds * 1000;
+    this.setTime(seconds);
+
+    const countDown = setInterval(() => {
+      const secondsLeft = Math.round((then - Date.now()) / 1000);
+      if (secondsLeft <= 0) {
+        clearInterval(countDown);
+        return;
+      }
+      this.setTime(secondsLeft);
+    }, 1000);
+  };
+
   render() {
     return (
       <div class="timer-page">
-        <Timer
-          playing={this.state.timerPlaying}
-          timerTime={this.state.timeLeft}
-        />
+        <Timer seconds={this.state.timeLeft} />
         <Button
           onClick={this.playButtonClick.bind(this)}
           label={this.state.timerControlText}
