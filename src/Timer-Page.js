@@ -32,9 +32,11 @@ class TimerPage extends Component {
     this.setState(
       {
         ...this.state,
-        timeLeft: seconds
+        timeLeft: seconds,
+        timerPlaying: false,
+        timerControlText: "Start"
       },
-      () => this.setTime(this.state.timeLeft)
+      () => this.timer(this.state.timeLeft)
     );
   };
 
