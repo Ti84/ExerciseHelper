@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/exercise-buddy/precache-manifest.50f6d3a8c13bc93867c6dfe7016546be.js"
+  "/ExerciseHelper/precache-manifest.dfbf39cc2a71f8f024775885f0abea00.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/exercise-buddy/index.html", {
+workbox.routing.registerNavigationRoute("/ExerciseHelper/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
