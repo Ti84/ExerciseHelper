@@ -47,6 +47,10 @@ class TimerPage extends Component {
     });
   };
 
+  openInfo = () => {
+    console.log("I will eventually open a modal!!!");
+  };
+
   timer = seconds => {
     const now = Date.now();
     const then = now + seconds * 1000;
@@ -92,6 +96,9 @@ class TimerPage extends Component {
               label={this.state.timerControlText}
             />
           </div>
+        </div>
+        <div className="info-control">
+          <ButtonControl onClick={() => this.openInfo()} label="i" />
         </div>
       </div>
     );

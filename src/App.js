@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Router } from "@reach/router";
+// import { Router } from "@reach/router";
 import "./App.scss";
 import TimerPage from "./Timer-Page";
 
@@ -8,9 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         {/* Fix github config to get Router working with github pages */}
-        <Router>
-          <TimerPage path="/" />
-        </Router>
+        {/* <Router> */}
+        <TimerPage path="/" />
+        {/* </Router> */}
       </div>
     );
   }
