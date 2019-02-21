@@ -2,7 +2,7 @@
   "name": "exercise-buddy",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Ti84.github.io/exercise-buddy/",
+  "homepage": "https://ti84.github.io/ExerciseHelper/",
   "dependencies": {
     "@reach/router": "^1.2.1",
     "gh-pages": "^2.0.1",
