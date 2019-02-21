@@ -1,13 +1,13 @@
 {
   "main.css": "/ExerciseHelper/static/css/main.12434984.chunk.css",
-  "main.js": "/ExerciseHelper/static/js/main.6baeb225.chunk.js",
-  "main.js.map": "/ExerciseHelper/static/js/main.6baeb225.chunk.js.map",
+  "main.js": "/ExerciseHelper/static/js/main.cc126ce2.chunk.js",
+  "main.js.map": "/ExerciseHelper/static/js/main.cc126ce2.chunk.js.map",
   "runtime~main.js": "/ExerciseHelper/static/js/runtime~main.dc338c79.js",
   "runtime~main.js.map": "/ExerciseHelper/static/js/runtime~main.dc338c79.js.map",
-  "static/js/2.f293a74f.chunk.js": "/ExerciseHelper/static/js/2.f293a74f.chunk.js",
-  "static/js/2.f293a74f.chunk.js.map": "/ExerciseHelper/static/js/2.f293a74f.chunk.js.map",
+  "static/js/2.c65db42e.chunk.js": "/ExerciseHelper/static/js/2.c65db42e.chunk.js",
+  "static/js/2.c65db42e.chunk.js.map": "/ExerciseHelper/static/js/2.c65db42e.chunk.js.map",
   "index.html": "/ExerciseHelper/index.html",
-  "precache-manifest.dfbf39cc2a71f8f024775885f0abea00.js": "/ExerciseHelper/precache-manifest.dfbf39cc2a71f8f024775885f0abea00.js",
+  "precache-manifest.9bae85c3779a0ac0c10556564efe558d.js": "/ExerciseHelper/precache-manifest.9bae85c3779a0ac0c10556564efe558d.js",
   "service-worker.js": "/ExerciseHelper/service-worker.js",
   "static/css/main.12434984.chunk.css.map": "/ExerciseHelper/static/css/main.12434984.chunk.css.map"
 }
