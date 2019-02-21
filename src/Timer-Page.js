@@ -58,9 +58,7 @@ class TimerPage extends Component {
     if (this.state.timerPlaying) {
       countDown = setInterval(() => {
         if (this.state.timeLeft % 60 === 0) {
-          var audio = new Audio(
-            "https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3"
-          );
+          const audio = document.getElementById("audio");
           audio.play();
         }
         const secondsLeft = Math.round((then - Date.now()) / 1000);
