@@ -103,9 +103,9 @@ class TimerPage extends Component {
             />
           </div>
         </div>
-        <div className="info-control">
+        {/* <div className="info-control">
           <ButtonControl onClick={() => this.openInfo()} label="i" />
-        </div>
+        </div> */}
       </div>
     );
   }
