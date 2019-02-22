@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Router } from "@reach/router";
 import "./App.scss";
-import TimerPage from "./TimerPage";
+import TimerPage from "./TimerPage/TimerPage";
 
 class App extends Component {
   render() {

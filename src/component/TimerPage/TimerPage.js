@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Timer from "./Timer";
-import ButtonControl from "./ButtonControl";
+import ButtonControl from "../ButtonControl";
 import NoSleep from "nosleep.js";
 
 class TimerPage extends Component {
