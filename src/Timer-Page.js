@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import Timer from "./Timer";
 import ButtonControl from "./ButtonControl";
+import NoSleep from "nosleep.js";
 
 class TimerPage extends Component {
   constructor(props) {
     super(props);
+    this.noSleep = new NoSleep();
     this.state = {
       timerControlText: "Start",
       timeLeft: 1200,
@@ -13,9 +15,15 @@ class TimerPage extends Component {
   }
 
   componentDidMount() {
+    window.addEventListener("click", this.handleNoSleep);
+    window.addEventListener("touch", this.handleNoSleep);
     this.setTime(this.state.timeLeft);
   }
-
+  handleNoSleep = () => {
+    document.removeEventListener("click", this.handleNoSleep, false);
+    document.removeEventListener("touch", this.handleNoSleep, false);
+    this.noSleep.enable();
+  };
   playButtonClick = () => {
     this.setState(
       {
