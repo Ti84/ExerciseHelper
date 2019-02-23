@@ -2,7 +2,7 @@
 
 import React, { Component } from "react";
 
-class Timer extends Component {
+class TimerDisplay extends Component {
   formatSeconds = remainingSeconds => {
     const minutes = Math.floor(remainingSeconds / 60);
     const seconds = Math.floor(remainingSeconds % 60);
@@ -13,7 +13,7 @@ class Timer extends Component {
 
   render() {
     return (
-      <div className="timer">
+      <div className="timer-display">
         <div className="timer-background">
           <span className="time">{this.formatSeconds(this.props.seconds)}</span>
         </div>
@@ -22,4 +22,4 @@ class Timer extends Component {
   }
 }
 
-export default Timer;
+export default TimerDisplay;

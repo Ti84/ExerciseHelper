@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Timer from "./Timer";
+import TimerDisplay from "./TimerDisplay";
 import ButtonControl from "../ButtonControl";
 import NoSleep from "nosleep.js";
 
-class TimerPage extends Component {
+class Timer extends Component {
   constructor(props) {
     super(props);
     this.noSleep = new NoSleep();
@@ -87,8 +87,8 @@ class TimerPage extends Component {
 
   render() {
     return (
-      <div className="timer-page">
-        <Timer seconds={this.state.timeLeft} />
+      <div className="timer">
+        <TimerDisplay seconds={this.state.timeLeft} />
         <div className="btn-control-nav">
           <div className="time-controls">
             <ButtonControl onClick={() => this.setTimeLeft(300)} label={5} />
@@ -111,4 +111,4 @@ class TimerPage extends Component {
   }
 }
 
-export default TimerPage;
+export default Timer;

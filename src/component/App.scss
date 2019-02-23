@@ -11,7 +11,7 @@
     font-family: 'Baloo Chettan', cursive;
   }
 
-  .timer-page {
+  .timer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +23,7 @@
     right: 0;
     left: 0;
 
-    .timer {
+    .timer-display {
       .timer-background {
         background: rgb(33, 25, 49);
         border-radius: 20px;
