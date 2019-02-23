@@ -1,0 +1,18 @@
+.timer-background {
+  background: rgb(33, 25, 49);
+  border-radius: 20px;
+  text-align: center;
+  height: auto;
+  width: auto;
+  display: inline-block;
+  padding: 15px 20px;
+
+  .time {
+    @media only screen and (max-width: 600px) {
+      font-size: 5em;
+    }
+
+    color: white;
+    font-size: 10em;
+  }
+}

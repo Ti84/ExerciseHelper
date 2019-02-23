@@ -1,6 +1,7 @@
 // This page is based on: https://www.youtube.com/watch?v=LAaf7-WuJJQ Wes Bos is amazing!
 
 import React, { Component } from "react";
+import "./TimerDisplay.scss";
 
 class TimerDisplay extends Component {
   formatSeconds = remainingSeconds => {

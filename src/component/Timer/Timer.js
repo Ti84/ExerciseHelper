@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import TimerDisplay from "./TimerDisplay";
-import ButtonControl from "../ButtonControl";
+import ButtonControl from "../Shared/ButtonControl";
 import NoSleep from "nosleep.js";
+import "./Timer.scss";
 
 class Timer extends Component {
   constructor(props) {
@@ -55,9 +56,9 @@ class Timer extends Component {
     });
   };
 
-  openInfo = () => {
-    console.log("I will eventually open a modal!!!");
-  };
+  // openInfo = () => {
+  //   console.log("I will eventually open a modal!!!");
+  // };
 
   timer = seconds => {
     const now = Date.now();

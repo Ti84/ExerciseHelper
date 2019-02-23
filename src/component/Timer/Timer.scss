@@ -1,0 +1,40 @@
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.btn-control-nav {
+  margin-top: 3%;
+
+  .time-controls {
+    .btn-control {
+      @media only screen and (max-width: 600px) {
+        width: 60px;
+        height: 60px;
+        font-size: 1em;
+      }
+
+      margin: 0 5px;
+      border-radius: 50%;
+      font-size: 1.5em;
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  .function-controls {
+    margin-top: 5%;
+
+    .btn-control {
+      font-size: 1.5em;
+    }
+  }
+}
