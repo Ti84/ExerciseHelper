@@ -17,10 +17,11 @@ class TimerControls extends Component {
       <div className="btn-control-nav">
         <div className="time-controls">
           {this.props.timeSetValues &&
-            this.props.timeSetValues.map(seconds => (
+            this.props.timeSetValues.map((seconds, i) => (
               <ButtonControl
                 onClick={() => this.buttonClick(seconds * 60)}
                 label={seconds}
+                key={i}
               />
             ))}
         </div>
