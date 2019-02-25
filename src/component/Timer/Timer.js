@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import TimerDisplay from "./TimerDisplay";
-import ButtonControl from "../Shared/ButtonControl";
 import NoSleep from "nosleep.js";
 import "./Timer.scss";
+import TimerControls, { TIMER_CONTROL_OPERATORS } from "./TimerControls";
 
 class Timer extends Component {
   constructor(props) {
     super(props);
     this.noSleep = new NoSleep();
     this.state = {
-      timerControlText: "Start",
       timeLeft: 1200,
       timerPlaying: false
     };
@@ -25,28 +24,27 @@ class Timer extends Component {
     document.removeEventListener("touch", this.handleNoSleep, false);
     this.noSleep.enable();
   };
-  playButtonClick = () => {
-    this.setState(
-      {
-        ...this.state,
-        timerControlText:
-          this.state.timerControlText === "Start" ? "Pause" : "Start",
-        timerPlaying: !this.state.timerPlaying
-      },
-      () => this.timer(this.state.timeLeft)
-    );
-  };
 
-  setTimeLeft = seconds => {
-    this.setState(
-      {
-        ...this.state,
-        timeLeft: seconds,
-        timerPlaying: false,
-        timerControlText: "Start"
-      },
-      () => this.timer(this.state.timeLeft)
-    );
+  handleTimerControlClick = timerControlLabel => {
+    if (typeof timerControlLabel === "number") {
+      this.setState(
+        {
+          ...this.state,
+          timeLeft: timerControlLabel,
+          timerPlaying: false
+        },
+        () => this.timer(this.state.timeLeft)
+      );
+    }
+    if (timerControlLabel === TIMER_CONTROL_OPERATORS.Start) {
+      this.setState(
+        {
+          ...this.state,
+          timerPlaying: !this.state.timerPlaying
+        },
+        () => this.timer(this.state.timeLeft)
+      );
+    }
   };
 
   setTime = seconds => {
@@ -55,10 +53,6 @@ class Timer extends Component {
       timeLeft: seconds
     });
   };
-
-  // openInfo = () => {
-  //   console.log("I will eventually open a modal!!!");
-  // };
 
   timer = seconds => {
     const now = Date.now();
@@ -90,23 +84,10 @@ class Timer extends Component {
     return (
       <div className="timer">
         <TimerDisplay seconds={this.state.timeLeft} />
-        <div className="btn-control-nav">
-          <div className="time-controls">
-            <ButtonControl onClick={() => this.setTimeLeft(300)} label={5} />
-            <ButtonControl onClick={() => this.setTimeLeft(600)} label={10} />
-            <ButtonControl onClick={() => this.setTimeLeft(900)} label={15} />
-            <ButtonControl onClick={() => this.setTimeLeft(1200)} label={20} />
-          </div>
-          <div className="function-controls">
-            <ButtonControl
-              onClick={this.playButtonClick}
-              label={this.state.timerControlText}
-            />
-          </div>
-        </div>
-        {/* <div className="info-control">
-          <ButtonControl onClick={() => this.openInfo()} label="i" />
-        </div> */}
+        <TimerControls
+          onClick={this.handleTimerControlClick}
+          timerPlaying={this.state.timerPlaying}
+        />
       </div>
     );
   }
