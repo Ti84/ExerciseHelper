@@ -9,15 +9,21 @@ class Timer extends Component {
     super(props);
     this.noSleep = new NoSleep();
     this.state = {
-      timeLeft: 1200,
+      timeLeft: 0,
       timerPlaying: false
     };
   }
 
   componentDidMount() {
+    this.setState(
+      {
+        timeLeft: this.props.initialSeconds,
+        timerPlaying: this.props.timerPlaying ? true : false
+      },
+      this.setTime(this.state.timeLeft)
+    );
     window.addEventListener("click", this.handleNoSleep);
     window.addEventListener("touch", this.handleNoSleep);
-    this.setTime(this.state.timeLeft);
   }
   handleNoSleep = () => {
     document.removeEventListener("click", this.handleNoSleep, false);
@@ -87,6 +93,8 @@ class Timer extends Component {
         <TimerControls
           onClick={this.handleTimerControlClick}
           timerPlaying={this.state.timerPlaying}
+          displayPlayButton={this.props.displayPlayButton}
+          timeSetValues={this.props.timeSetValues}
         />
       </div>
     );
