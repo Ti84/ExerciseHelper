@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Timer from "./Timer/Timer";
+import "./TimerPage.scss";
 
 class TimerPage extends Component {
   constructor(props) {
@@ -12,11 +13,13 @@ class TimerPage extends Component {
   }
   render() {
     return (
-      <Timer
-        timeSetValues={this.state.timeSetValues}
-        displayPlayButton={this.state.displayPlayButton}
-        initialSeconds={this.state.initialSeconds}
-      />
+      <div className="timer-page__timer">
+        <Timer
+          timeSetValues={this.state.timeSetValues}
+          displayPlayButton={this.state.displayPlayButton}
+          initialSeconds={this.state.initialSeconds}
+        />
+      </div>
     );
   }
 }
